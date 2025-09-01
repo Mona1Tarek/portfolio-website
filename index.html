@@ -3,153 +3,159 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Mona Tarek | Portfolio</title>
+  <title>Mona Tarek Mohamed | Portfolio</title>
   <style>
     /* Reset */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: "Poppins", sans-serif;
-    }
-
-    body {
-      background: #0d1117;
-      color: #f0f6fc;
-      line-height: 1.6;
-    }
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: "Poppins", sans-serif; }
+    body { background: #0d1117; color: #f0f6fc; line-height: 1.6; }
 
     /* Header */
     header {
       background: #161b22;
       padding: 20px 40px;
       text-align: center;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
+      position: sticky; top: 0; z-index: 1000;
     }
-
-    header h1 {
-      font-size: 2rem;
-      color: #58a6ff;
-      animation: fadeIn 1.5s ease;
-    }
-
-    nav {
-      margin-top: 10px;
-    }
-
+    header h1 { font-size: 2rem; color: #58a6ff; animation: fadeIn 1.5s ease; }
+    nav { margin-top: 10px; }
     nav a {
-      margin: 0 15px;
-      color: #c9d1d9;
-      text-decoration: none;
-      font-weight: 500;
-      transition: color 0.3s;
+      margin: 0 15px; color: #c9d1d9; text-decoration: none; font-weight: 500; transition: color 0.3s;
     }
-
-    nav a:hover {
-      color: #58a6ff;
-    }
+    nav a:hover { color: #58a6ff; }
 
     /* Sections */
     section {
-      padding: 60px 20px;
-      max-width: 900px;
-      margin: auto;
-      opacity: 0;
-      transform: translateY(20px);
-      transition: all 0.8s ease;
+      padding: 60px 20px; max-width: 900px; margin: auto;
+      opacity: 0; transform: translateY(20px); transition: all 0.8s ease;
     }
+    section.show { opacity: 1; transform: translateY(0); }
+    h2 { margin-bottom: 20px; color: #58a6ff; font-size: 1.8rem; }
 
-    section.show {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    h2 {
-      margin-bottom: 20px;
-      color: #58a6ff;
-      font-size: 1.8rem;
-    }
-
-    /* About */
-    #about p {
-      font-size: 1.1rem;
-      color: #c9d1d9;
-    }
-
-    /* Projects */
-    .project-card {
-      background: #161b22;
-      padding: 20px;
-      border-radius: 12px;
-      margin-bottom: 20px;
+    /* Cards */
+    .card {
+      background: #161b22; padding: 20px; border-radius: 12px; margin-bottom: 20px;
       transition: transform 0.3s, box-shadow 0.3s;
     }
+    .card:hover { transform: translateY(-5px); box-shadow: 0 4px 20px rgba(88, 166, 255, 0.2); }
 
-    .project-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 4px 20px rgba(88, 166, 255, 0.2);
+    /* Skills */
+    .skills-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px;
     }
+    .skill { background: #161b22; padding: 15px; border-radius: 8px; text-align: center; }
 
     /* Contact */
     #contact a {
-      display: inline-block;
-      margin: 10px;
-      padding: 10px 20px;
-      border-radius: 8px;
-      background: #58a6ff;
-      color: #0d1117;
-      font-weight: bold;
-      text-decoration: none;
+      display: inline-block; margin: 10px; padding: 10px 20px; border-radius: 8px;
+      background: #58a6ff; color: #0d1117; font-weight: bold; text-decoration: none;
       transition: background 0.3s;
     }
-
-    #contact a:hover {
-      background: #1f6feb;
-      color: #fff;
-    }
+    #contact a:hover { background: #1f6feb; color: #fff; }
 
     /* Animations */
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(-20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(-20px); } to { opacity: 1; transform: translateY(0); } }
   </style>
 </head>
 <body>
   <header>
-    <h1>Mona Tarek</h1>
+    <h1>Mona Tarek Mohamed</h1>
     <nav>
       <a href="#about">About</a>
+      <a href="#experience">Experience</a>
       <a href="#projects">Projects</a>
+      <a href="#skills">Skills</a>
+      <a href="#cv">CV</a>
       <a href="#contact">Contact</a>
     </nav>
   </header>
 
-  <section id="about">
-    <h2>About Me</h2>
+  <!-- Hero -->
+  <section id="hero">
+    <h2>Welcome!</h2>
     <p>
-      I’m an AI Engineer passionate about building intelligent systems in NLP, and Large Language Models. I enjoy creating real-world applications and continuously improving my skills in modern AI technologies.
+      I am an AI Engineer passionate about building intelligent systems in Computer Vision, NLP, and Large Language Models. Scroll down to explore my journey, skills, and projects.
     </p>
   </section>
 
-  <section id="projects">
-    <h2>Projects</h2>
-    <div class="project-card">
-      <h3>Drowsiness Detection System</h3>
-      <p>Built a CNN-based system to detect driver drowsiness in real time.</p>
+  <!-- About -->
+  <section id="about">
+    <h2>About Me</h2>
+    <p>
+      Artificial Intelligence Engineer with a Bachelor’s degree in Electronics and Communication Engineering from Alexandria University (Class of 2025). Skilled in machine learning, computer vision, and natural language processing, with technical expertise in Python, TensorFlow, Keras, PyTorch, ONNX, quantization, and vector database technologies. 
+      Focused on Large Language Models (LLMs), Retrieval-Augmented Generation (RAG), and AI agents, with a career path directed toward LLM engineering.
+    </p>
+  </section>
+
+  <!-- Experience -->
+  <section id="experience">
+    <h2>Experience</h2>
+    <div class="card">
+      <h3>Computer Vision Engineer Intern – Cellula Technologies</h3>
+      <p>Aug 2024 – Oct 2024</p>
+      <p>Implemented deep learning models for geospatial analysis, improving detection accuracy by 92%. Built end-to-end CV pipelines and deployed via Streamlit & Flask.</p>
     </div>
-    <div class="project-card">
-      <h3>Traffic Sign Detection</h3>
-      <p>Developed an optimized YOLO model to detect 45 traffic sign classes for ADAS.</p>
+    <div class="card">
+      <h3>Artificial Intelligence Intern – Telecom Egypt</h3>
+      <p>Jul 2024 – Aug 2024</p>
+      <p>Worked on classification and regression tasks, hyperparameter tuning, and model optimization, improving performance by 25%.</p>
     </div>
-    <div class="project-card">
-      <h3>Voice Command System</h3>
-      <p>Implemented speech-to-text with Vosk and integrated semantic search using ChromaDB.</p>
+    <div class="card">
+      <h3>Robotics Instructor – Robokid Academy</h3>
+      <p>Aug 2023 – Aug 2024</p>
+      <p>Taught robotics, programming, and electronics. Guided projects using sensors, actuators, and microcontrollers.</p>
+    </div>
+    <div class="card">
+      <h3>Technical Mentor – Mind Cloud Navigation Subteam</h3>
+      <p>Jul 2022 – 2024</p>
+      <p>Developed navigation algorithms in ROS for autonomous vehicles and mentored junior members.</p>
     </div>
   </section>
 
+  <!-- Projects -->
+  <section id="projects">
+    <h2>Projects</h2>
+    <div class="card">
+      <h3>Voice Command Mini-RAG System</h3>
+      <p>Offline speech-to-text with Vosk + ChromaDB semantic search. <a href="https://github.com/Mona1Tarek/voiceCommand" target="_blank">View Code</a></p>
+    </div>
+    <div class="card">
+      <h3>Hand Gesture Controlled Robot</h3>
+      <p>Real-time gesture recognition with MediaPipe (~95% accuracy). <a href="https://github.com/Mona1Tarek/hand_gesture" target="_blank">View Code</a></p>
+    </div>
+    <div class="card">
+      <h3>Teeth Classification App</h3>
+      <p>ResNet-50 fine-tuning for dental classification deployed with Streamlit. <a href="https://github.com/Mona1Tarek/Teeth-Classification-APP" target="_blank">View Code</a></p>
+    </div>
+    <div class="card">
+      <h3>Drowsiness Detection System</h3>
+      <p>Rule-based and CNN-based models for driver drowsiness detection.</p>
+    </div>
+  </section>
+
+  <!-- Skills -->
+  <section id="skills">
+    <h2>Skills</h2>
+    <div class="skills-grid">
+      <div class="skill">Python, OOP</div>
+      <div class="skill">TensorFlow, Keras, PyTorch</div>
+      <div class="skill">Scikit-learn, NumPy, pandas</div>
+      <div class="skill">YOLO, OpenCV, CNNs, Segmentation</div>
+      <div class="skill">LLMs, Hugging Face, LlamaIndex</div>
+      <div class="skill">RAG, ChromaDB</div>
+      <div class="skill">Docker, Streamlit, Flask</div>
+      <div class="skill">Data Viz: Matplotlib, Seaborn</div>
+      <div class="skill">Soft Skills: Mentorship, Teamwork, Communication</div>
+    </div>
+  </section>
+
+  <!-- CV -->
+  <section id="cv">
+    <h2>Curriculum Vitae</h2>
+    <p>For full details of my academic, professional, and project background, please check my CV below:</p>
+    <a href="Mona-Tarek-Mohamed.pdf" target="_blank">📄 View CV</a>
+  </section>
+
+  <!-- Contact -->
   <section id="contact">
     <h2>Contact</h2>
     <a href="mailto:mona.tarek.mohamed1@gmail.com">Email Me</a>
@@ -160,18 +166,10 @@
   <script>
     // Scroll animations
     const sections = document.querySelectorAll("section");
-
     const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("show");
-        }
-      });
+      entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add("show"); });
     }, { threshold: 0.2 });
-
-    sections.forEach(section => {
-      observer.observe(section);
-    });
+    sections.forEach(section => { observer.observe(section); });
   </script>
 </body>
 </html>
