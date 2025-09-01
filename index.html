@@ -5,55 +5,121 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Mona Tarek | Portfolio</title>
   <style>
-    body {
-      font-family: Arial, sans-serif;
+    /* Reset */
+    * {
       margin: 0;
       padding: 0;
+      box-sizing: border-box;
+      font-family: "Poppins", sans-serif;
+    }
+
+    body {
+      background: #0d1117;
+      color: #f0f6fc;
       line-height: 1.6;
-      background: #f4f4f9;
-      color: #333;
     }
+
+    /* Header */
     header {
-      background: #333;
-      color: #fff;
-      padding: 20px;
+      background: #161b22;
+      padding: 20px 40px;
       text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
     }
+
+    header h1 {
+      font-size: 2rem;
+      color: #58a6ff;
+      animation: fadeIn 1.5s ease;
+    }
+
+    nav {
+      margin-top: 10px;
+    }
+
     nav a {
-      color: #fff;
-      margin: 0 10px;
+      margin: 0 15px;
+      color: #c9d1d9;
       text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s;
     }
+
+    nav a:hover {
+      color: #58a6ff;
+    }
+
+    /* Sections */
     section {
-      padding: 40px 20px;
+      padding: 60px 20px;
       max-width: 900px;
       margin: auto;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.8s ease;
     }
+
+    section.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
     h2 {
-      border-bottom: 2px solid #333;
-      padding-bottom: 10px;
+      margin-bottom: 20px;
+      color: #58a6ff;
+      font-size: 1.8rem;
     }
-    .project {
-      background: #fff;
-      padding: 15px;
-      margin-bottom: 15px;
-      border-radius: 8px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+
+    /* About */
+    #about p {
+      font-size: 1.1rem;
+      color: #c9d1d9;
     }
-    footer {
-      text-align: center;
+
+    /* Projects */
+    .project-card {
+      background: #161b22;
       padding: 20px;
-      background: #333;
+      border-radius: 12px;
+      margin-bottom: 20px;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .project-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 4px 20px rgba(88, 166, 255, 0.2);
+    }
+
+    /* Contact */
+    #contact a {
+      display: inline-block;
+      margin: 10px;
+      padding: 10px 20px;
+      border-radius: 8px;
+      background: #58a6ff;
+      color: #0d1117;
+      font-weight: bold;
+      text-decoration: none;
+      transition: background 0.3s;
+    }
+
+    #contact a:hover {
+      background: #1f6feb;
       color: #fff;
-      margin-top: 20px;
+    }
+
+    /* Animations */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
     }
   </style>
 </head>
 <body>
-
   <header>
     <h1>Mona Tarek</h1>
-    <p>AI Engineer | NLP | LLM Enthusiast</p>
     <nav>
       <a href="#about">About</a>
       <a href="#projects">Projects</a>
@@ -63,41 +129,49 @@
 
   <section id="about">
     <h2>About Me</h2>
-    <p>Hello! I’m Mona, an Electronics & Communication Engineer passionate about Artificial Intelligence, Computer Vision, and LLMs. I’ve worked on projects like driver monitoring systems, object detection, and NLP applications.</p>
+    <p>
+      I’m an AI Engineer passionate about building intelligent systems in NLP, and Large Language Models. I enjoy creating real-world applications and continuously improving my skills in modern AI technologies.
+    </p>
   </section>
 
   <section id="projects">
     <h2>Projects</h2>
-
-    <div class="project">
+    <div class="project-card">
       <h3>Drowsiness Detection System</h3>
-      <p>Built a deep learning model to detect driver drowsiness using eye state classification and real-time video analysis.</p>
+      <p>Built a CNN-based system to detect driver drowsiness in real time.</p>
     </div>
-
-    <div class="project">
+    <div class="project-card">
       <h3>Traffic Sign Detection</h3>
-      <p>Developed an ONNX-optimized YOLO model for detecting 45 classes of traffic signs for ADAS systems.</p>
+      <p>Developed an optimized YOLO model to detect 45 traffic sign classes for ADAS.</p>
     </div>
-
-    <div class="project">
+    <div class="project-card">
       <h3>Voice Command System</h3>
-      <p>Implemented a speech-to-text system using Vosk and ChromaDB for vector similarity in command recognition.</p>
+      <p>Implemented speech-to-text with Vosk and integrated semantic search using ChromaDB.</p>
     </div>
-
   </section>
 
   <section id="contact">
     <h2>Contact</h2>
-    <p>Email: mona.tarek@example.com</p>
-    <p>LinkedIn: <a href="https://linkedin.com/in/mona" target="_blank">linkedin.com/in/mona</a></p>
-    <p>GitHub: <a href="https://github.com/mona" target="_blank">github.com/mona</a></p>
+    <a href="mona.tarek.mohamed1@gmail.com">Email Me</a>
+    <a href="https://www.linkedin.com/in/mona-tarek-4b9425244/" target="_blank">LinkedIn</a>
+    <a href="https://github.com/Mona1Tarek" target="_blank">GitHub</a>
   </section>
 
-  <footer>
-    <p>&copy; 2025 Mona Tarek. All Rights Reserved.</p>
-  </footer>
+  <script>
+    // Scroll animations
+    const sections = document.querySelectorAll("section");
 
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("show");
+        }
+      });
+    }, { threshold: 0.2 });
+
+    sections.forEach(section => {
+      observer.observe(section);
+    });
+  </script>
 </body>
 </html>
-
-
