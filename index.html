@@ -11,49 +11,84 @@
 
     /* Header */
     header {
-      background: #161b22;
+      background: linear-gradient(90deg, #0d1117, #161b22);
       padding: 20px 40px;
       text-align: center;
       position: sticky; top: 0; z-index: 1000;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.6);
     }
-    header h1 { font-size: 2rem; color: #58a6ff; animation: fadeIn 1.5s ease; }
+    header h1 {
+      font-size: 2.2rem;
+      background: linear-gradient(90deg, #58a6ff, #f78166);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: gradientMove 4s infinite alternate;
+    }
     nav { margin-top: 10px; }
     nav a {
-      margin: 0 15px; color: #c9d1d9; text-decoration: none; font-weight: 500; transition: color 0.3s;
+      margin: 0 15px; color: #c9d1d9; text-decoration: none; font-weight: 500;
+      transition: color 0.3s;
     }
     nav a:hover { color: #58a6ff; }
 
     /* Sections */
     section {
-      padding: 60px 20px; max-width: 900px; margin: auto;
-      opacity: 0; transform: translateY(20px); transition: all 0.8s ease;
+      padding: 60px 20px; max-width: 900px; margin: 40px auto;
+      opacity: 0; transform: translateY(40px); transition: all 0.8s ease;
+      border-radius: 12px;
+      background: linear-gradient(145deg, #0d1117, #161b22);
+      box-shadow: 0 4px 15px rgba(0,0,0,0.4);
     }
     section.show { opacity: 1; transform: translateY(0); }
-    h2 { margin-bottom: 20px; color: #58a6ff; font-size: 1.8rem; }
+    h2 { margin-bottom: 20px; color: #58a6ff; font-size: 1.9rem; }
 
     /* Cards */
     .card {
       background: #161b22; padding: 20px; border-radius: 12px; margin-bottom: 20px;
       transition: transform 0.3s, box-shadow 0.3s;
     }
-    .card:hover { transform: translateY(-5px); box-shadow: 0 4px 20px rgba(88, 166, 255, 0.2); }
+    .card:hover {
+      transform: translateY(-5px) scale(1.02);
+      box-shadow: 0 6px 25px rgba(88, 166, 255, 0.3);
+    }
 
     /* Skills */
     .skills-grid {
       display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px;
     }
-    .skill { background: #161b22; padding: 15px; border-radius: 8px; text-align: center; }
-
-    /* Contact */
-    #contact a {
-      display: inline-block; margin: 10px; padding: 10px 20px; border-radius: 8px;
-      background: #58a6ff; color: #0d1117; font-weight: bold; text-decoration: none;
-      transition: background 0.3s;
+    .skill {
+      background: #161b22; padding: 15px; border-radius: 8px; text-align: center;
+      transition: transform 0.3s, background 0.3s;
     }
-    #contact a:hover { background: #1f6feb; color: #fff; }
+    .skill:hover { transform: scale(1.05); background: #1f2937; }
+
+    /* Contact + Buttons */
+    #contact a, #cv a {
+      display: inline-block; margin: 10px; padding: 12px 24px; border-radius: 8px;
+      background: linear-gradient(90deg, #58a6ff, #f78166);
+      color: #0d1117; font-weight: bold; text-decoration: none;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    #contact a:hover, #cv a:hover {
+      transform: scale(1.05);
+      box-shadow: 0 4px 15px rgba(88, 166, 255, 0.4);
+    }
 
     /* Animations */
-    @keyframes fadeIn { from { opacity: 0; transform: translateY(-20px); } to { opacity: 1; transform: translateY(0); } }
+    @keyframes gradientMove {
+      from { background-position: 0% 50%; }
+      to { background-position: 100% 50%; }
+    }
+    @keyframes slideInLeft {
+      from { opacity: 0; transform: translateX(-50px); }
+      to { opacity: 1; transform: translateX(0); }
+    }
+    @keyframes slideInRight {
+      from { opacity: 0; transform: translateX(50px); }
+      to { opacity: 1; transform: translateX(0); }
+    }
+    section.left.show { animation: slideInLeft 1s ease forwards; }
+    section.right.show { animation: slideInRight 1s ease forwards; }
   </style>
 </head>
 <body>
@@ -70,93 +105,92 @@
   </header>
 
   <!-- Hero -->
-  <section id="hero">
-    <h2>Welcome!</h2>
+  <section id="hero" class="left">
+    <h2>Hello 👋</h2>
     <p>
-      I am an AI Engineer passionate about building intelligent systems in Computer Vision, NLP, and Large Language Models. Scroll down to explore my journey, skills, and projects.
+      I am an <strong>AI Engineer</strong> passionate about Computer Vision, NLP, and Large Language Models.  
+      Explore my portfolio to see my journey, projects, and skills.
     </p>
   </section>
 
   <!-- About -->
-  <section id="about">
+  <section id="about" class="right">
     <h2>About Me</h2>
     <p>
-      Artificial Intelligence Engineer with a Bachelor’s degree in Electronics and Communication Engineering from Alexandria University (Class of 2025). Skilled in machine learning, computer vision, and natural language processing, with technical expertise in Python, TensorFlow, Keras, PyTorch, ONNX, quantization, and vector database technologies. 
+      Artificial Intelligence Engineer with a Bachelor’s degree in Electronics and Communication Engineering from Alexandria University (Class of 2025).  
+      Skilled in machine learning, computer vision, and natural language processing, with technical expertise in Python, TensorFlow, Keras, PyTorch, ONNX, quantization, and vector database technologies.  
       Focused on Large Language Models (LLMs), Retrieval-Augmented Generation (RAG), and AI agents, with a career path directed toward LLM engineering.
     </p>
   </section>
 
   <!-- Experience -->
-  <section id="experience">
+  <section id="experience" class="left">
     <h2>Experience</h2>
     <div class="card">
       <h3>Computer Vision Engineer Intern – Cellula Technologies</h3>
-      <p>Aug 2024 – Oct 2024</p>
+      <p><em>Aug 2024 – Oct 2024</em></p>
       <p>Implemented deep learning models for geospatial analysis, improving detection accuracy by 92%. Built end-to-end CV pipelines and deployed via Streamlit & Flask.</p>
     </div>
     <div class="card">
       <h3>Artificial Intelligence Intern – Telecom Egypt</h3>
-      <p>Jul 2024 – Aug 2024</p>
+      <p><em>Jul 2024 – Aug 2024</em></p>
       <p>Worked on classification and regression tasks, hyperparameter tuning, and model optimization, improving performance by 25%.</p>
     </div>
     <div class="card">
       <h3>Robotics Instructor – Robokid Academy</h3>
-      <p>Aug 2023 – Aug 2024</p>
+      <p><em>Aug 2023 – Aug 2024</em></p>
       <p>Taught robotics, programming, and electronics. Guided projects using sensors, actuators, and microcontrollers.</p>
-    </div>
-    <div class="card">
-      <h3>Technical Mentor – Mind Cloud Navigation Subteam</h3>
-      <p>Jul 2022 – 2024</p>
-      <p>Developed navigation algorithms in ROS for autonomous vehicles and mentored junior members.</p>
     </div>
   </section>
 
   <!-- Projects -->
-  <section id="projects">
+  <section id="projects" class="right">
     <h2>Projects</h2>
     <div class="card">
       <h3>Voice Command Mini-RAG System</h3>
-      <p>Offline speech-to-text with Vosk + ChromaDB semantic search. <a href="https://github.com/Mona1Tarek/voiceCommand" target="_blank">View Code</a></p>
+      <p>Offline speech-to-text with Vosk + ChromaDB semantic search. 
+        <a href="https://github.com/Mona1Tarek/voiceCommand" target="_blank">View Code</a>
+      </p>
     </div>
     <div class="card">
       <h3>Hand Gesture Controlled Robot</h3>
-      <p>Real-time gesture recognition with MediaPipe (~95% accuracy). <a href="https://github.com/Mona1Tarek/hand_gesture" target="_blank">View Code</a></p>
+      <p>Real-time gesture recognition with MediaPipe (~95% accuracy). 
+        <a href="https://github.com/Mona1Tarek/hand_gesture" target="_blank">View Code</a>
+      </p>
     </div>
     <div class="card">
       <h3>Teeth Classification App</h3>
-      <p>ResNet-50 fine-tuning for dental classification deployed with Streamlit. <a href="https://github.com/Mona1Tarek/Teeth-Classification-APP" target="_blank">View Code</a></p>
-    </div>
-    <div class="card">
-      <h3>Drowsiness Detection System</h3>
-      <p>Rule-based and CNN-based models for driver drowsiness detection.</p>
+      <p>ResNet-50 fine-tuning for dental classification deployed with Streamlit. 
+        <a href="https://github.com/Mona1Tarek/Teeth-Classification-APP" target="_blank">View Code</a>
+      </p>
     </div>
   </section>
 
   <!-- Skills -->
-  <section id="skills">
+  <section id="skills" class="left">
     <h2>Skills</h2>
     <div class="skills-grid">
       <div class="skill">Python, OOP</div>
       <div class="skill">TensorFlow, Keras, PyTorch</div>
       <div class="skill">Scikit-learn, NumPy, pandas</div>
-      <div class="skill">YOLO, OpenCV, CNNs, Segmentation</div>
+      <div class="skill">YOLO, OpenCV, CNNs</div>
       <div class="skill">LLMs, Hugging Face, LlamaIndex</div>
       <div class="skill">RAG, ChromaDB</div>
       <div class="skill">Docker, Streamlit, Flask</div>
       <div class="skill">Data Viz: Matplotlib, Seaborn</div>
-      <div class="skill">Soft Skills: Mentorship, Teamwork, Communication</div>
+      <div class="skill">Soft Skills: Mentorship, Teamwork</div>
     </div>
   </section>
 
   <!-- CV -->
-  <section id="cv">
+  <section id="cv" class="right">
     <h2>Curriculum Vitae</h2>
     <p>For full details of my academic, professional, and project background, please check my CV below:</p>
     <a href="Mona-Tarek-Mohamed.pdf" target="_blank">📄 View CV</a>
   </section>
 
   <!-- Contact -->
-  <section id="contact">
+  <section id="contact" class="left">
     <h2>Contact</h2>
     <a href="mailto:mona.tarek.mohamed1@gmail.com">Email Me</a>
     <a href="https://www.linkedin.com/in/mona-tarek-4b9425244/" target="_blank">LinkedIn</a>
@@ -167,9 +201,11 @@
     // Scroll animations
     const sections = document.querySelectorAll("section");
     const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add("show"); });
+      entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add("show");
+      });
     }, { threshold: 0.2 });
-    sections.forEach(section => { observer.observe(section); });
+    sections.forEach(section => observer.observe(section));
   </script>
 </body>
 </html>
