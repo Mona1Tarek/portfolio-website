@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mona Tarek Mohamed | AI Engineer</title>
+<meta name="description" content="AI Engineer building end-to-end LLM systems: RAG pipelines, agentic workflows and production-ready AI services.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0b1020;--card:#121a30;--line:#222d4d;--text:#e8ecf8;--muted:#9aa6c7;--accent:#7c8cff;--accent2:#38e1c6}
+:root[data-theme="light"]{--bg:#f6f8ff;--card:#fff;--line:#dfe5f7;--text:#141a33;--muted:#5a6585;--accent:#4f46e5;--accent2:#0e9f8e}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Inter,system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.65}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1000px;margin:0 auto;padding:0 24px}
+nav{position:sticky;top:0;z-index:10;background:color-mix(in srgb,var(--bg) 85%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
+.logo{font-weight:700}.logo span{color:var(--accent)}
+nav ul{display:flex;gap:22px;list-style:none;font-size:.92rem;color:var(--muted)}
+nav ul a:hover{color:var(--text)}
+#theme{background:none;border:1px solid var(--line);color:var(--text);border-radius:8px;padding:6px 10px;cursor:pointer}
+@media(max-width:700px){nav ul{display:none}}
+.hero{padding:96px 0 72px}
+.tag{font-family:'JetBrains Mono',monospace;color:var(--accent2);font-size:.9rem}
+h1{font-size:clamp(2.4rem,6vw,4rem);line-height:1.1;margin:14px 0}
+h1 em{font-style:normal;background:linear-gradient(90deg,var(--accent),var(--accent2));-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero p{max-width:640px;color:var(--muted);font-size:1.1rem}
+.btns{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
+.btn{padding:11px 20px;border-radius:10px;border:1px solid var(--line);font-weight:500}
+.btn.p{background:var(--accent);border-color:var(--accent);color:#fff}
+.btn:hover{transform:translateY(-2px)}
+section{padding:64px 0}
+h2{font-size:1.8rem;margin-bottom:28px}h2::before{content:"// ";color:var(--accent);font-family:'JetBrains Mono',monospace}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:24px;transition:.2s}
+.card:hover{border-color:var(--accent)}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:18px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+.chip{font-family:'JetBrains Mono',monospace;font-size:.76rem;padding:3px 10px;border-radius:99px;background:color-mix(in srgb,var(--accent) 14%,transparent);color:var(--accent)}
+.tl{border-left:2px solid var(--line);padding-left:24px;display:grid;gap:22px}
+.job{position:relative}.job::before{content:"";position:absolute;left:-31px;top:8px;width:12px;height:12px;border-radius:50%;background:var(--accent)}
+.job h3{font-size:1.1rem}.meta{color:var(--muted);font-size:.88rem;margin:2px 0 10px}
+.job ul{padding-left:18px;color:var(--muted);font-size:.95rem}.job li{margin-bottom:6px}
+.card h3{margin-bottom:8px}.card p,.card li{color:var(--muted);font-size:.95rem}.card ul{padding-left:18px}
+.skills h3{font-size:.95rem;color:var(--accent2);margin-bottom:6px}
+footer{border-top:1px solid var(--line);padding:48px 0;text-align:center;color:var(--muted)}
+.contact{display:flex;flex-wrap:wrap;justify-content:center;gap:12px;margin:20px 0}
+.reveal{opacity:0;transform:translateY(18px);transition:.6s}.reveal.in{opacity:1;transform:none}
+</style>
+</head>
+<body>
+<nav><div class="wrap">
+<a class="logo" href="#top">mona<span>.</span>dev</a>
+<ul><li><a href="#about">About</a></li><li><a href="#experience">Experience</a></li><li><a href="#projects">Projects</a></li><li><a href="#skills">Skills</a></li><li><a href="#contact">Contact</a></li></ul>
+<button id="theme" aria-label="Toggle theme">◐</button>
+</div></nav>
+
+<header class="hero" id="top"><div class="wrap">
+<div class="tag">&gt; hello, world. I'm</div>
+<h1>Mona Tarek <em>Mohamed</em></h1>
+<div class="tag" style="font-size:1.1rem">AI Engineer · Alexandria, Egypt</div>
+<p style="margin-top:18px">I build end-to-end LLM and AI systems: RAG pipelines, agentic workflows and production-ready AI services with Python, APIs and modern AI frameworks.</p>
+<div class="btns">
+<a class="btn p" href="#projects">View projects</a>
+<a class="btn" href="https://github.com/Mona1Tarek" target="_blank" rel="noopener">GitHub</a>
+<a class="btn" href="https://www.linkedin.com/in/mona-tarek-4b9425244/" target="_blank" rel="noopener">LinkedIn</a>
+<a class="btn" href="Mona_Tarek_Mohamed_Resume.pdf" target="_blank">Resume</a>
+</div>
+</div></header>
+
+<section id="about"><div class="wrap reveal">
+<h2>About</h2>
+<div class="card"><p>AI Engineer with hands-on experience building end-to-end LLM and AI systems, including RAG pipelines, agentic workflows and machine learning solutions. I enjoy technical research, experimentation and evaluation, and turning prototypes into reliable services.</p>
+<div class="chips"><span class="chip">B.Sc. Electronics &amp; Communication Eng.</span><span class="chip">Alexandria University, 2021-2025</span></div></div>
+</div></section>
+
+<section id="experience"><div class="wrap reveal">
+<h2>Experience</h2>
+<div class="tl">
+<div class="job"><h3>LLM Fine-Tuning Research Assistant · Alexandria University</h3><div class="meta">07/2026 - Present · Supervised by Dr. Ahmed Eltrass</div>
+<ul><li>Investigating LLM fine-tuning and post-training: supervised fine-tuning, parameter-efficient methods, reinforcement learning with GRPO and preference optimization.</li>
+<li>Experimenting with Llama-based models on reasoning and question-answering tasks: dataset preparation, training configuration, PEFT, quantization and GPU experiments.</li>
+<li>Evaluating reward-driven training with correctness and structured-format rewards, plus LLM-as-a-Judge evaluation.</li></ul></div>
+<div class="job"><h3>AI Engineer · Rockai Dev</h3><div class="meta">02/2026 - 06/2026 · Alexandria, on-site, full time</div>
+<ul><li>Built production AI systems: autonomous agents, multi-step LLM workflows and RAG pipelines, focused on structured outputs, modularity, reliability and evaluation.</li>
+<li>Developed end-to-end pipelines spanning prompt engineering, vector retrieval, agent orchestration and API integration.</li>
+<li>Debugged retrieval, generation and output-validation issues, improving reliability and consistency.</li></ul></div>
+<div class="job"><h3>Generative AI Engineer Intern · Sprints</h3><div class="meta">01/2025 - 02/2025 · Online</div>
+<ul><li>Optimized prompts in production to improve accuracy and reduce hallucinations.</li>
+<li>Planned and implemented an AI agent with a RAG pipeline: document processing, embeddings, vector indexing, retrieval and optimization.</li></ul></div>
+<div class="job"><h3>Artificial Intelligence Intern · Telecom Egypt</h3><div class="meta">07/2024 - 08/2024 · Alexandria, on-site</div>
+<ul><li>Built classification, regression and clustering solutions with Scikit-learn (Random Forest, SVM, XGBoost, Gradient Boosting and more).</li>
+<li>Created data pipelines and feature engineering workflows; evaluated models with cross-validation, regularization and hyperparameter tuning.</li></ul></div>
+</div>
+</div></section>
+
+<section id="projects"><div class="wrap reveal">
+<h2>Projects</h2>
+<div class="grid">
+<div class="card"><h3>AI-Powered Python Code Tutor &amp; Compiler</h3>
+<p>An AI-powered code execution and review platform with an end-to-end pipeline for validation, execution, prompt construction, LLM analysis and structured feedback. AST-based security checks catch syntax errors, restricted imports and unsafe operations, with FastAPI APIs and a chatbot interface.</p>
+<div class="chips"><span class="chip">Python</span><span class="chip">FastAPI</span><span class="chip">LLMs</span><span class="chip">Pydantic</span><span class="chip">AST</span><span class="chip">Docker</span></div></div>
+<div class="card"><h3>Reyada: Agentic Startup Journey &amp; Market Research Agent</h3>
+<p>A ReAct agent built with LangChain, Tavily web search and LangSmith tracing for observable multi-step market research. Multi-phase architecture with structured LLM outputs, an LLMFactory abstraction over multiple providers, strict schema validation, MongoDB persistence and FastAPI.</p>
+<div class="chips"><span class="chip">LangChain</span><span class="chip">LangSmith</span><span class="chip">Tavily</span><span class="chip">MongoDB</span><span class="chip">FastAPI</span></div></div>
+<div class="card"><h3>Voice Command Mini-RAG System</h3>
+<p>Graduation project. A low-latency offline speech-to-text pipeline with a local Hugging Face model, plus a mini RAG voice command system using ChromaDB for semantic command retrieval. Deployed as a Dockerized service on a Raspberry Pi for privacy-preserving, hands-free ADAS control, with sub-3-second responses.</p>
+<div class="chips"><span class="chip">Vosk</span><span class="chip">ONNX</span><span class="chip">ChromaDB</span><span class="chip">Docker</span><span class="chip">Raspberry Pi</span></div></div>
+</div>
+</div></section>
+
+<section id="skills"><div class="wrap reveal">
+<h2>Skills</h2>
+<div class="grid skills">
+<div class="card"><h3>Machine Learning &amp; Deep Learning</h3><p>TensorFlow, PyTorch, Keras, Scikit-learn, Neural Networks, Model Optimization, Hyperparameter Tuning, Transfer Learning, Model Evaluation</p></div>
+<div class="card"><h3>Generative AI &amp; LLMs</h3><p>RAG, Agents, LangChain, LangSmith, Prompt Engineering, Transformers, AI Pipeline Development</p></div>
+<div class="card"><h3>Data Storage &amp; Retrieval</h3><p>Pandas, NumPy, MongoDB, ChromaDB, Qdrant, Embeddings, Vector Retrieval</p></div>
+<div class="card"><h3>Engineering &amp; Deployment</h3><p>Python, OOP, Git, Linux, FastAPI, API development, Docker, Streamlit</p></div>
+</div>
+</div></section>
+
+<footer id="contact"><div class="wrap reveal">
+<h2 style="margin-bottom:8px">Let's build something</h2>
+<p>Open to AI engineering opportunities and research collaborations.</p>
+<div class="contact">
+<a class="btn p" href="mailto:mona.tarek.mohamed1@gmail.com">Email me</a>
+<a class="btn" href="https://github.com/Mona1Tarek" target="_blank" rel="noopener">GitHub</a>
+<a class="btn" href="https://www.linkedin.com/in/mona-tarek-4b9425244/" target="_blank" rel="noopener">LinkedIn</a>
+</div>
+<small>© <span id="y"></span> Mona Tarek Mohamed</small>
+</div></footer>
+
+<script>
+const r=document.documentElement,t=document.getElementById('theme');
+try{const s=localStorage.getItem('theme');if(s)r.dataset.theme=s}catch(e){}
+t.onclick=()=>{const n=r.dataset.theme==='light'?'dark':'light';r.dataset.theme=n;try{localStorage.setItem('theme',n)}catch(e){}};
+document.getElementById('y').textContent=new Date().getFullYear();
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.1});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>
