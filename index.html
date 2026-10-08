@@ -1,225 +1,79 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Mona Tarek Mohamed | Portfolio</title>
-  <style>
-    /* Reset */
-    * { margin: 0; padding: 0; box-sizing: border-box; font-family: "Poppins", sans-serif; }
-    body { background: #0d1117; color: #f0f6fc; line-height: 1.6; }
-
-    /* Header */
-    header {
-      background: linear-gradient(90deg, #0d1117, #161b22);
-      padding: 20px 40px;
-      text-align: center;
-      position: sticky; top: 0; z-index: 1000;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.6);
-    }
-    header h1 {
-      font-size: 2.2rem;
-      background: linear-gradient(90deg, #58a6ff, #f78166);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      animation: gradientMove 4s infinite alternate;
-    }
-    nav { margin-top: 10px; }
-    nav a {
-      margin: 0 15px; color: #c9d1d9; text-decoration: none; font-weight: 500;
-      transition: color 0.3s;
-    }
-    nav a:hover { color: #58a6ff; }
-
-    /* Sections */
-    section {
-      padding: 60px 20px; max-width: 900px; margin: 40px auto;
-      opacity: 0; transform: translateY(40px); transition: all 0.8s ease;
-      border-radius: 12px;
-      background: linear-gradient(145deg, #0d1117, #161b22);
-      box-shadow: 0 4px 15px rgba(0,0,0,0.4);
-    }
-    section.show { opacity: 1; transform: translateY(0); }
-    h2 { margin-bottom: 20px; color: #58a6ff; font-size: 1.9rem; }
-
-    /* Cards */
-    .card {
-      background: #161b22; padding: 20px; border-radius: 12px; margin-bottom: 20px;
-      transition: transform 0.3s, box-shadow 0.3s;
-    }
-    .card:hover {
-      transform: translateY(-5px) scale(1.02);
-      box-shadow: 0 6px 25px rgba(88, 166, 255, 0.3);
-    }
-
-    /* Skills */
-    .skills-grid {
-      display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px;
-    }
-    .skill {
-      background: #161b22; padding: 15px; border-radius: 8px; text-align: center;
-      transition: transform 0.3s, background 0.3s;
-    }
-    .skill:hover { transform: scale(1.05); background: #1f2937; }
-
-    /* Contact + Buttons */
-    #contact a, #cv a {
-      display: inline-block; margin: 10px; padding: 12px 24px; border-radius: 8px;
-      background: linear-gradient(90deg, #58a6ff, #f78166);
-      color: #0d1117; font-weight: bold; text-decoration: none;
-      transition: transform 0.3s, box-shadow 0.3s;
-    }
-    #contact a:hover, #cv a:hover {
-      transform: scale(1.05);
-      box-shadow: 0 4px 15px rgba(88, 166, 255, 0.4);
-    }
-
-    /* Animations */
-    @keyframes gradientMove {
-      from { background-position: 0% 50%; }
-      to { background-position: 100% 50%; }
-    }
-    @keyframes slideInLeft {
-      from { opacity: 0; transform: translateX(-50px); }
-      to { opacity: 1; transform: translateX(0); }
-    }
-    @keyframes slideInRight {
-      from { opacity: 0; transform: translateX(50px); }
-      to { opacity: 1; transform: translateX(0); }
-    }
-    section.left.show { animation: slideInLeft 1s ease forwards; }
-    section.right.show { animation: slideInRight 1s ease forwards; }
-  </style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#101310" />
+  <meta name="description" content="Mona Tarek Mohamed, AI Engineer focused on LLM systems, RAG, agentic workflows, and machine learning." />
+  <title>Mona Tarek Mohamed | AI Engineer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <script src="script.js" defer></script>
 </head>
 <body>
-  <header>
-    <h1>Mona Tarek Mohamed</h1>
-    <nav>
-      <a href="#about">About</a>
-      <a href="#experience">Experience</a>
-      <a href="#projects">Projects</a>
-      <a href="#skills">Skills</a>
-      <a href="#cv">CV</a>
-      <a href="#contact">Contact</a>
-    </nav>
-  </header>
+  <div class="site-shell">
+    <header class="site-header">
+      <a class="wordmark" href="#home" aria-label="Mona Tarek home"><span class="wordmark-mark">M</span><span>MONA TAREK</span></a>
+      <button class="menu-toggle" aria-expanded="false" aria-controls="main-nav" aria-label="Toggle navigation"><span></span><span></span></button>
+      <nav id="main-nav" class="main-nav" aria-label="Main navigation">
+        <a href="#about">About</a><a href="#experience">Experience</a><a href="#projects">Projects</a><a href="#skills">Skills</a><a class="nav-contact" href="#contact">Let’s talk <span>↗</span></a>
+      </nav>
+    </header>
 
-  <!-- Hero -->
-  <section id="hero" class="left">
-    <h2>Hello</h2>
-    <p>
-      I am an <strong>AI Engineer</strong> passionate about machine learning, deep learning, NLP, and Large Language Models.  
-      Explore my portfolio to see my journey, projects, and skills.
-    </p>
-  </section>
+    <main>
+      <section class="hero section-wrap" id="home">
+        <div class="hero-copy reveal">
+          <p class="eyebrow"><span class="status-dot"></span> AI ENGINEER · ALEXANDRIA, EGYPT</p>
+          <h1>Building AI systems<br />that <span class="accent-text">do useful work.</span></h1>
+          <p class="hero-lede">I’m Mona, an AI Engineer working across LLM applications, RAG pipelines, agentic workflows, and machine learning. I care about making AI systems more reliable, observable, and useful in real products.</p>
+          <div class="hero-actions"><a class="button button-primary" href="#projects">Explore selected work <span>↘</span></a><a class="button button-secondary" href="https://drive.google.com/file/d/180lRar_oA14hzjTJozHcknIbXDoU6cdI/view?usp=sharing" target="_blank" rel="noreferrer">View CV <span>↗</span></a><a class="text-link" href="mailto:mona.tarek.mohamed1@gmail.com">Get in touch <span>↗</span></a></div>
+          <div class="hero-meta"><span>ECE · Alexandria University</span><span class="meta-divider"></span><span>Research · LLM post-training</span></div>
+        </div>
+        <div class="hero-visual reveal" aria-label="Abstract decorative illustration representing connected AI systems">
+          <div class="visual-orbit orbit-one"></div><div class="visual-orbit orbit-two"></div><div class="visual-orbit orbit-three"></div>
+          <div class="visual-core"><span class="core-glyph">✳</span><span class="core-label">AI SYSTEMS</span></div>
+          <span class="node node-a">LLMs</span><span class="node node-b">RAG</span><span class="node node-c">AGENTS</span><span class="node node-d">EVAL</span>
+          <span class="visual-index">01 / 04</span>
+        </div>
+      </section>
 
-  <!-- About -->
-  <section id="about" class="right">
-    <h2>About Me</h2>
-    <p>
-      Artificial Intelligence Engineer with a Bachelor’s degree in Electronics and Communication Engineering from Alexandria University (Class of 2025).  
-      Skilled in machine learning, computer vision, and natural language processing, with technical expertise in Python, TensorFlow, Keras, PyTorch, ONNX, quantization, and vector database technologies.  
-      Focused on Large Language Models (LLMs), Retrieval-Augmented Generation (RAG), and AI agents, with a career path directed toward LLM engineering.
-    </p>
-  </section>
+      <section class="intro-band section-wrap reveal" id="about">
+        <p class="eyebrow">01 — A LITTLE ABOUT ME</p>
+        <div class="intro-content"><h2>From model experiments<br />to <span class="muted-text">end-to-end systems.</span></h2><div><p>I’m a 2025 Electronics and Communication Engineering graduate from Alexandria University. My work spans building AI-powered applications and researching how to adapt, evaluate, and improve language models.</p><p>I enjoy connecting the pieces that make an AI product work: data preparation, retrieval, prompting, tool use, structured outputs, API integration, and evaluation.</p><div class="inline-facts"><span>CGPA <strong>3.13</strong></span><span>FOCUS <strong>LLMs · RAG · Agents</strong></span></div></div></div>
+      </section>
 
-  <!-- Experience -->
-  <section id="experience" class="left">
-    <h2>Experience</h2>
-    <div class="card">
-      <h3>Computer Vision Engineer Intern – Cellula Technologies</h3>
-      <p><em>Aug 2024 – Oct 2024</em></p>
-      <p>Implemented deep learning models for geospatial analysis, improving detection accuracy by 92%. Built end-to-end CV pipelines and deployed via Streamlit & Flask.</p>
-    </div>
-    <div class="card">
-      <h3>Artificial Intelligence Intern – Telecom Egypt</h3>
-      <p><em>Jul 2024 – Aug 2024</em></p>
-      <p>Worked on classification and regression tasks, hyperparameter tuning, and model optimization, improving performance by 25%.</p>
-    </div>
-    <div class="card">
-      <h3>Robotics Instructor – Robokid Academy</h3>
-      <p><em>Aug 2023 – Aug 2024</em></p>
-      <p>Taught robotics, programming, and electronics. Guided projects using sensors, actuators, and microcontrollers.</p>
-    </div>
-  </section>
+      <section class="section-wrap content-section" id="experience">
+        <div class="section-heading reveal"><div><p class="eyebrow">02 — WHERE I’VE BEEN</p><h2>Experience & research</h2></div><p class="section-note">Building practical systems while exploring what makes them work better.</p></div>
+        <div class="timeline">
+          <article class="timeline-item reveal"><div class="timeline-date">JUL 2026 — PRESENT</div><div class="timeline-main"><div class="timeline-title-row"><h3>LLM Fine-Tuning Research Assistant</h3><span class="tag">RESEARCH</span></div><p class="org">Alexandria University · Research project supervised by Dr. Ahmed Eltrass</p><ul><li>Investigating supervised fine-tuning, parameter-efficient methods, GRPO, and preference optimization.</li><li>Experimenting with Llama-based models, dataset preparation, training configurations, PEFT, quantization, and GPU-based workflows.</li><li>Exploring reward-driven training and evaluation, including correctness and structured-format rewards and LLM-as-a-Judge.</li></ul></div></article>
+          <article class="timeline-item reveal"><div class="timeline-date">FEB 2026 — JUN 2026</div><div class="timeline-main"><div class="timeline-title-row"><h3>AI Engineer</h3><span class="tag tag-solid">FULL-TIME</span></div><p class="org">Rockai Dev · Alexandria, on-site</p><ul><li>Built production AI systems including autonomous agents, multi-step LLM workflows, and RAG pipelines.</li><li>Developed end-to-end workflows spanning prompt engineering, vector retrieval, agent orchestration, structured outputs, and API integrations.</li><li>Debugged retrieval, generation, and output-validation issues to improve reliability and consistency.</li></ul></div></article>
+          <article class="timeline-item reveal"><div class="timeline-date">JAN 2025 — FEB 2025</div><div class="timeline-main"><h3>Generative AI Engineer Intern</h3><p class="org">Sprints · Remote</p><ul><li>Applied prompt engineering to improve response accuracy, reduce hallucinations, and strengthen human–AI interaction.</li><li>Planned and implemented a RAG agent pipeline covering document processing, embeddings, vector indexing, retrieval, and optimization.</li></ul></div></article>
+          <article class="timeline-item reveal"><div class="timeline-date">JUL 2024 — AUG 2024</div><div class="timeline-main"><h3>Artificial Intelligence Intern</h3><p class="org">Telecom Egypt · Alexandria, on-site</p><ul><li>Built classification, regression, and clustering solutions with Scikit-learn.</li><li>Worked on feature engineering, cross-validation, model metrics, regularization, and hyperparameter tuning.</li></ul></div></article>
+          <article class="timeline-item reveal"><div class="timeline-date">AUG 2024 — OCT 2024</div><div class="timeline-main"><h3>Computer Vision Intern</h3><p class="org">Cellula Technologies</p><ul><li>Built geospatial image segmentation workflows and deep learning pipelines, with reported detection performance reaching 92%.</li><li>Worked on preprocessing and deployed demos using Streamlit and Flask.</li></ul></div></article>
+        </div>
+      </section>
 
-  <!-- Projects -->
-  <section id="projects" class="right">
-    <h2>Selected Projects</h2>
-    <div class="card">
-      <h3>Voice Command Mini-RAG System</h3>
-      <p>Offline speech-to-text with Vosk + ChromaDB semantic search. 
-        <a href="https://github.com/Mona1Tarek/voiceCommand" target="_blank">GitHub Repository</a>
-      </p>
-    </div>
-    <div class="card">
-      <h3>Hand Gesture Controlled Robot</h3>
-      <p>Real-time gesture recognition with MediaPipe (~95% accuracy). 
-        <a href="https://github.com/Mona1Tarek/hand_gesture" target="_blank">GitHub Repository</a>
-      </p>
-    </div>
-    <div class="card">
-      <h3>Teeth Classification App</h3>
-      <p>ResNet-50 fine-tuning for dental classification deployed with Streamlit. 
-        <a href="https://github.com/Mona1Tarek/Teeth-Classification-APP" target="_blank">GitHub Repository</a>
-      </p>
-    </div>
-    <div class="card">
-    <h3>Document-Based Q&A System with LlamaIndex</h3>
-    <p>
-      Built a lightweight QA engine using LlamaIndex and Hugging Face embeddings. Users can query document content via natural language, with efficient semantic retrieval and clean integration.
-      <a href="https://github.com/Mona1Tarek/Simple-document-QA-system-using-LlamaIndex-and-HuggingFace-embeddings" target="_blank">GitHub Repository</a>
-    </p>
+      <section class="projects-section" id="projects"><div class="section-wrap content-section"><div class="section-heading reveal"><div><p class="eyebrow">03 — SELECTED WORK</p><h2>Projects I’ve built</h2></div><p class="section-note">A mix of agentic applications, LLM tooling, and edge AI.</p></div>
+        <div class="project-grid">
+          <article class="project-card project-featured reveal"><div class="project-topline"><span class="project-number">01</span><span class="project-kind">AGENTIC AI</span></div><div class="project-art art-reyada"><div class="art-window"><div class="window-dots"><i></i><i></i><i></i></div><div class="art-flow"><span>Founder question</span><b>↓</b><span>Research agent</span><b>↓</b><span>Structured insights</span></div></div><span class="art-orbit"></span></div><div class="project-body"><h3>Reyada <span>↗</span></h3><p class="project-subtitle">Agentic Startup Journey & Market Research</p><p>Designed an AI co-pilot for startup founders, including a ReAct market research agent with web search, observable multi-step workflows, and structured results.</p><div class="chip-row"><span>FastAPI</span><span>LangChain</span><span>LangSmith</span><span>Tavily</span><span>MongoDB</span></div></div></article>
+          <article class="project-card reveal"><div class="project-topline"><span class="project-number">02</span><span class="project-kind">LLM TOOLING</span></div><div class="project-art art-compiler"><div class="code-window"><div class="window-dots"><i></i><i></i><i></i></div><code><span>01</span> def review_code(code):<br/><span>02</span> &nbsp; validate_ast(code)<br/><span>03</span> &nbsp; result = execute(code)<br/><span>04</span> &nbsp; return ai_review(result)</code><div class="terminal-line"><b>✓</b> structured feedback ready</div></div></div><div class="project-body"><h3>AI Python Code Tutor & Compiler <span>↗</span></h3><p>Built a code execution and AI review workflow with validation, execution, prompt construction, structured feedback, and a chatbot interface.</p><div class="chip-row"><span>Python</span><span>FastAPI</span><span>Pydantic</span><span>AST</span><span>Docker</span></div></div></article>
+          <article class="project-card reveal"><div class="project-topline"><span class="project-number">03</span><span class="project-kind">EDGE AI · RAG</span></div><div class="project-art art-voice"><div class="sound-bars"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div><div class="voice-pill">VOICE → RETRIEVAL → ACTION</div><div class="voice-chip">offline · local · responsive</div></div><div class="project-body"><h3>Voice Command Mini-RAG <span>↗</span></h3><p>Built an offline speech-to-text pipeline with Vosk and semantic command retrieval using ChromaDB, packaged for Raspberry Pi deployment.</p><div class="chip-row"><span>Vosk</span><span>ChromaDB</span><span>ONNX</span><span>Linux</span><span>Docker</span></div><a class="project-link" href="https://github.com/Mona1Tarek/voiceCommand" target="_blank" rel="noreferrer">View repository <span>↗</span></a></div></article>
+          <article class="project-card reveal"><div class="project-topline"><span class="project-number">04</span><span class="project-kind">RAG</span></div><div class="project-art art-docs"><div class="doc-stack"><div class="doc-sheet"><i></i><i></i><i></i><i></i></div><div class="search-lens">⌕</div><div class="doc-label">SEMANTIC SEARCH</div></div></div><div class="project-body"><h3>Document-Based Q&A <span>↗</span></h3><p>Built a lightweight question-answering system using LlamaIndex and Hugging Face embeddings to retrieve relevant information from documents.</p><div class="chip-row"><span>LlamaIndex</span><span>Hugging Face</span><span>Embeddings</span><span>RAG</span></div><a class="project-link" href="https://github.com/Mona1Tarek/Simple-document-QA-system-using-LlamaIndex-and-HuggingFace-embeddings" target="_blank" rel="noreferrer">View repository <span>↗</span></a></div></article>
+        </div>
+        <p class="project-footnote">Additional work includes computer vision and classification projects. Ask me for more details or visit my GitHub profile.</p>
+      </div></section>
+
+      <section class="section-wrap content-section" id="skills"><div class="section-heading reveal"><div><p class="eyebrow">04 — MY TOOLKIT</p><h2>Skills & technologies</h2></div><p class="section-note">The tools I use to build, test, and ship AI applications.</p></div>
+        <div class="skills-layout"><article class="skill-group reveal"><span class="skill-index">01</span><div><h3>Generative AI & LLMs</h3><p>RAG · AI agents · LangChain · LangSmith · Transformers · Prompt engineering · Fine-tuning · PEFT · LLM evaluation</p></div></article><article class="skill-group reveal"><span class="skill-index">02</span><div><h3>Machine Learning</h3><p>PyTorch · TensorFlow · Keras · Scikit-learn · Neural networks · Transfer learning · Model evaluation · Hyperparameter tuning</p></div></article><article class="skill-group reveal"><span class="skill-index">03</span><div><h3>Data & Retrieval</h3><p>Pandas · NumPy · MongoDB · ChromaDB · Qdrant · Embeddings · Vector retrieval · Data preprocessing</p></div></article><article class="skill-group reveal"><span class="skill-index">04</span><div><h3>Engineering & Deployment</h3><p>Python · OOP · FastAPI · REST APIs · Docker · Git · Linux · Streamlit</p></div></article></div>
+      </section>
+
+      <section class="education-band"><div class="section-wrap education-inner reveal"><div><p class="eyebrow">05 — EDUCATION</p><h2>Strong engineering foundations.<br /><span class="muted-text">Curiosity beyond the syllabus.</span></h2></div><div class="education-card"><span class="education-year">2021 — 2025</span><h3>Bachelor’s Degree in Electronics & Communication Engineering</h3><p>Faculty of Engineering · Alexandria University</p><div class="education-score"><span>CGPA</span><strong>3.13 / 4.00</strong></div></div></div></section>
+
+      <section class="contact-section section-wrap" id="contact"><div class="contact-panel reveal"><p class="eyebrow">06 — LET’S CONNECT</p><h2>Have an interesting<br />AI problem in mind?</h2><p>I’m open to conversations about AI engineering, LLM applications, and opportunities to build useful systems.</p><div class="contact-actions"><a class="button button-primary" href="mailto:mona.tarek.mohamed1@gmail.com">Email me <span>↗</span></a><a class="button button-secondary" href="https://www.linkedin.com/in/mona-tarek-4b9425244/" target="_blank" rel="noreferrer">LinkedIn <span>↗</span></a><a class="button button-secondary" href="https://github.com/Mona1Tarek" target="_blank" rel="noreferrer">GitHub <span>↗</span></a></div><div class="contact-email">mona.tarek.mohamed1@gmail.com</div></div></section>
+    </main>
+    <footer class="site-footer section-wrap"><a class="wordmark" href="#home"><span class="wordmark-mark">M</span><span>MONA TAREK</span></a><p>Designed with intention. Built for the next opportunity.</p><span>© <span id="year"></span> Mona Tarek Mohamed</span></footer>
   </div>
-  <div class="card">
-    <h3>Drowsiness Detection via Deep Learning</h3>
-    <p>
-      Developed a real-time driver drowsiness detection system using CNNs (e.g., fine-tuned InceptionV3) for accurate eye-state classification and alerting. Optimized for deployment and visual insights.
-      <a href="https://github.com/Mona1Tarek/drowsiness-deep-learning" target="_blank">GitHub Repository</a>
-    </p>
-  </div>
-  </section>
-
-  <!-- Skills -->
-  <section id="skills" class="left">
-    <h2>Skills</h2>
-    <div class="skills-grid">
-      <div class="skill">Python, OOP</div>
-      <div class="skill">TensorFlow, Keras, PyTorch</div>
-      <div class="skill">Scikit-learn, NumPy, pandas</div>
-      <div class="skill">YOLO, OpenCV, CNNs</div>
-      <div class="skill">LLMs, Hugging Face, LlamaIndex</div>
-      <div class="skill">RAG, ChromaDB</div>
-      <div class="skill">Docker, Streamlit, Flask</div>
-      <div class="skill">Data Viz: Matplotlib, Seaborn</div>
-      <div class="skill">Soft Skills: Mentorship, Teamwork</div>
-    </div>
-  </section>
-
-  <!-- CV -->
-  <section id="cv" class="right">
-    <h2>Curriculum Vitae</h2>
-    <p>For full details of my academic, professional, and project background, please check my CV below:</p>
-    <a href="https://drive.google.com/file/d/180lRar_oA14hzjTJozHcknIbXDoU6cdI/view?usp=sharing" target="_blank">📄 View CV</a>
-  </section>
-
-  <!-- Contact -->
-  <section id="contact" class="left">
-    <h2>Contact</h2>
-    <a href="mailto:mona.tarek.mohamed1@gmail.com">Email Me</a>
-    <a href="https://www.linkedin.com/in/mona-tarek-4b9425244/" target="_blank">LinkedIn</a>
-    <a href="https://github.com/Mona1Tarek" target="_blank">GitHub</a>
-  </section>
-
-  <script>
-    // Scroll animations
-    const sections = document.querySelectorAll("section");
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) entry.target.classList.add("show");
-      });
-    }, { threshold: 0.2 });
-    sections.forEach(section => observer.observe(section));
-  </script>
 </body>
 </html>
