@@ -117,6 +117,42 @@ footer h2::after{left:50%;transform:translateX(-50%)}
 @media(max-width:820px){.exp-row{grid-template-columns:1fr;gap:12px}}
 #glow{position:fixed;top:0;left:0;width:520px;height:520px;margin:-260px 0 0 -260px;border-radius:50%;pointer-events:none;z-index:-1;background:radial-gradient(circle,color-mix(in srgb,var(--accent) 15%,transparent),transparent 65%);will-change:transform}
 .card,.btn{transition:transform .5s var(--ease),border-color .3s,box-shadow .4s var(--ease)}
+
+#net{position:absolute;inset:0;width:100%;height:100%;opacity:.6;pointer-events:none}
+.hero .wrap{z-index:1}
+.ch{display:inline-block;white-space:pre;opacity:0;transform:translateY(46px) rotate(8deg);animation:chIn .9s var(--ease) forwards;animation-delay:calc(var(--c)*50ms + .3s)}
+@keyframes chIn{to{opacity:1;transform:none}}
+.hero h1 em{display:inline-block}
+.hero h1 em.in-up{animation:up .9s var(--ease) forwards,shine 5s linear infinite}
+.rot b{font-weight:500;color:var(--text)}
+.cue{position:absolute;left:50%;bottom:18px;width:24px;height:38px;margin-left:-12px;border:2px solid var(--muted);border-radius:14px;opacity:.7}
+.cue span{position:absolute;left:50%;top:7px;width:4px;height:8px;margin-left:-2px;border-radius:2px;background:var(--accent2);animation:wheel 1.8s var(--ease) infinite}
+@keyframes wheel{0%{opacity:0;transform:translateY(0)}30%{opacity:1}100%{opacity:0;transform:translateY(14px)}}
+.mq{overflow:hidden;border-block:1px solid var(--line);padding:14px 0;-webkit-mask-image:linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent);mask-image:linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent)}
+.mq-track{display:flex;gap:36px;width:max-content;animation:mq 40s linear infinite}
+.mq:hover .mq-track{animation-play-state:paused}
+.mq-track span{font-family:'JetBrains Mono',monospace;font-size:.9rem;color:var(--muted);white-space:nowrap}
+.mq-track span::before{content:"✦ ";color:var(--accent)}
+@keyframes mq{to{transform:translateX(calc(-50% - 18px))}}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:18px;margin-top:18px}
+.stat{text-align:center;padding:24px 16px;border:1px solid var(--line);border-radius:14px;background:var(--card);transition:transform .5s var(--ease),border-color .3s}
+.stat:hover{transform:translateY(-6px);border-color:var(--accent)}
+.stat b{display:block;font-size:2.6rem;font-weight:600;line-height:1.2;background:linear-gradient(90deg,var(--accent),var(--accent2));-webkit-background-clip:text;background-clip:text;color:transparent}
+.stat span{color:var(--muted);font-size:.9rem}
+.tl::before{content:"";position:absolute;left:-2px;top:0;width:2px;height:calc(var(--p,0)*1%);background:linear-gradient(var(--accent),var(--accent2))}
+.job::before{background:var(--line);transform:scale(.5);animation:none;transition:transform .6s var(--ease),background .4s}
+.job.on::before{background:var(--accent);transform:scale(1);animation:pulse 2.4s ease-out infinite}
+.card{position:relative;overflow:hidden}
+.card::before{content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;opacity:0;transition:opacity .4s;background:radial-gradient(260px circle at var(--mx,50%) var(--my,50%),color-mix(in srgb,var(--accent) 16%,transparent),transparent 62%)}
+.card:hover::before{opacity:1}
+.btn{position:relative;overflow:hidden}
+.btn::after{content:"";position:absolute;top:0;left:-120%;width:55%;height:100%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.35),transparent);transform:skewX(-20deg);transition:left .8s var(--ease)}
+.btn:hover::after{left:140%}
+.btn.p{animation:ring 2.8s ease-out infinite}.btn.p:hover{animation:none}
+@keyframes ring{0%{box-shadow:0 0 0 0 color-mix(in srgb,var(--accent) 50%,transparent)}70%,100%{box-shadow:0 0 0 14px transparent}}
+.ripple{position:absolute;border-radius:50%;background:rgba(255,255,255,.45);transform:scale(0);animation:rip .7s ease-out forwards;pointer-events:none}
+@keyframes rip{to{transform:scale(4);opacity:0}}
+@media(prefers-reduced-motion:reduce){.ch{opacity:1!important;transform:none!important}}
 </style>
 </head>
 <body>
@@ -128,17 +164,25 @@ footer h2::after{left:50%;transform:translateX(-50%)}
 <button id="theme" aria-label="Toggle theme">◐</button>
 </div></nav>
 
-<header class="hero" id="top"><div class="orb o1"></div><div class="orb o2"></div><div class="wrap">
+<header class="hero" id="top"><canvas id="net"></canvas><div class="orb o1"></div><div class="orb o2"></div><div class="wrap">
 <div class="tag"><span id="type"></span><span class="cursor"></span></div>
-<h1 class="in-up" style="animation-delay:.3s">Mona Tarek <em>Mohamed</em></h1>
+<h1 id="name" aria-label="Mona Tarek Mohamed">Mona Tarek <em class="in-up" style="animation-delay:1s">Mohamed</em></h1>
 <div class="tag in-up" style="font-size:1.1rem;animation-delay:.5s">AI Engineer · Alexandria, Egypt</div>
+<div class="tag in-up rot" style="animation-delay:1.3s">Focus: <b id="rot"></b><span class="cursor"></span></div>
 <p class="in-up" style="margin-top:18px;animation-delay:.7s">I build end-to-end LLM and AI systems: RAG pipelines, agentic workflows and production-ready AI services with Python, APIs and modern AI frameworks.</p>
-</div></header>
+</div><a class="cue" href="#about" aria-label="Scroll down"><span></span></a></header>
+
+<div class="mq" aria-hidden="true"><div class="mq-track"><span>PyTorch</span><span>TensorFlow</span><span>LangChain</span><span>LangSmith</span><span>RAG</span><span>AI Agents</span><span>FastAPI</span><span>Docker</span><span>ChromaDB</span><span>Qdrant</span><span>MongoDB</span><span>Transformers</span><span>Prompt Engineering</span><span>Scikit-learn</span><span>Streamlit</span><span>PyTorch</span><span>TensorFlow</span><span>LangChain</span><span>LangSmith</span><span>RAG</span><span>AI Agents</span><span>FastAPI</span><span>Docker</span><span>ChromaDB</span><span>Qdrant</span><span>MongoDB</span><span>Transformers</span><span>Prompt Engineering</span><span>Scikit-learn</span><span>Streamlit</span></div></div>
 
 <section id="about"><div class="wrap reveal">
 <h2>About</h2>
 <div class="card"><p>AI Engineer with hands-on experience building end-to-end LLM and AI systems, including RAG pipelines, agentic workflows and machine learning solutions. I enjoy technical research, experimentation and evaluation, and turning prototypes into reliable services.</p>
 <div class="chips"><span class="chip">B.Sc. Electronics &amp; Communication Eng.</span><span class="chip">Alexandria University, 2021-2025</span></div></div>
+<div class="stats stagger">
+<div class="stat"><b data-n="4">0</b><span>Roles &amp; internships</span></div>
+<div class="stat"><b data-n="4">0</b><span>Selected projects</span></div>
+<div class="stat"><b data-n="31">0</b><span>Skills &amp; tools</span></div>
+</div>
 </div></section>
 
 <section id="expertise"><div class="wrap reveal">
@@ -227,7 +271,7 @@ document.querySelectorAll('.reveal,.stagger').forEach(el=>io.observe(el));
 
 // typing effect
 const txt="> hello, world. I'm",ty=document.getElementById('type');let i=0;
-(function type(){ty.textContent=txt.slice(0,i++);if(i<=txt.length)setTimeout(type,70)})();
+(function type(){ty.textContent=txt.slice(0,i++);if(i<=txt.length)setTimeout(type,70);else{const c=document.querySelector('.cursor');if(c)c.style.display='none'}})();
 // scroll progress, back-to-top, active nav
 const bar=document.getElementById('bar'),tb=document.getElementById('top-btn');
 const links=[...document.querySelectorAll('nav ul a')],secs=links.map(a=>document.querySelector(a.getAttribute('href')));
@@ -262,6 +306,60 @@ addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY},{passive:true});
 if(matchMedia('(hover:hover)').matches)document.querySelectorAll('.btn').forEach(b=>{
  b.addEventListener('mousemove',e=>{const r=b.getBoundingClientRect();b.style.transform=`translate(${(e.clientX-r.left-r.width/2)*.2}px,${(e.clientY-r.top-r.height/2)*.3}px)`});
  b.addEventListener('mouseleave',()=>b.style.transform='')});
+
+// more motion
+(function(){
+ const RM=matchMedia('(prefers-reduced-motion:reduce)').matches;
+ // letter-by-letter name
+ const h=document.getElementById('name'),tn=h.firstChild,f=document.createDocumentFragment();
+ [...tn.textContent].forEach((c,k)=>{const sp=document.createElement('span');sp.className='ch';sp.style.setProperty('--c',k);sp.textContent=c;f.appendChild(sp)});
+ h.replaceChild(f,tn);
+ // rotating roles
+ const el=document.getElementById('rot'),ph=['end-to-end LLM systems','RAG pipelines','agentic workflows','production-ready AI services'];
+ if(RM){el.textContent=ph[0]}else{let p=0,c=0,d=false;(function tick(){const w=ph[p];el.textContent=w.slice(0,c);
+  if(!d&&c<w.length){c++;setTimeout(tick,60)}else if(!d){d=true;setTimeout(tick,1600)}else if(c>0){c--;setTimeout(tick,28)}else{d=false;p=(p+1)%ph.length;setTimeout(tick,300)}})()}
+ // count up
+ const so=new IntersectionObserver(es=>es.forEach(e=>{if(!e.isIntersecting)return;so.unobserve(e.target);
+  const b=e.target.querySelector('b'),n=+b.dataset.n,t0=performance.now();
+  if(RM){b.textContent=n;return}
+  (function fr(t){const k=Math.min(1,(t-t0)/1600),v=1-Math.pow(1-k,4);b.textContent=Math.round(n*v);if(k<1)requestAnimationFrame(fr)})(t0)}),{threshold:.6});
+ document.querySelectorAll('.stat').forEach(x=>so.observe(x));
+ // timeline progress
+ const tl=document.querySelector('.tl'),jobs=[...document.querySelectorAll('.job')];
+ function tlp(){const r=tl.getBoundingClientRect();tl.style.setProperty('--p',Math.max(0,Math.min(1,(innerHeight*.65-r.top)/r.height))*100);
+  jobs.forEach(j=>j.classList.toggle('on',j.getBoundingClientRect().top<innerHeight*.7))}
+ addEventListener('scroll',tlp,{passive:true});tlp();
+ // card spotlight
+ document.querySelectorAll('.card').forEach(c=>c.addEventListener('mousemove',e=>{const b=c.getBoundingClientRect();
+  c.style.setProperty('--mx',(e.clientX-b.left)+'px');c.style.setProperty('--my',(e.clientY-b.top)+'px')}));
+ // button ripple
+ document.querySelectorAll('.btn').forEach(b=>b.addEventListener('click',e=>{const r=b.getBoundingClientRect(),d=Math.max(r.width,r.height),s=document.createElement('span');
+  s.className='ripple';s.style.cssText=`width:${d}px;height:${d}px;left:${e.clientX-r.left-d/2}px;top:${e.clientY-r.top-d/2}px`;b.appendChild(s);setTimeout(()=>s.remove(),700)}));
+ // data packets travelling along diagram arrows
+ if(!RM)document.querySelectorAll('svg.ill line.ar').forEach((l,k)=>{const ns='http://www.w3.org/2000/svg',c=document.createElementNS(ns,'circle');
+  c.setAttribute('r','2.8');c.setAttribute('cx',l.getAttribute('x1'));c.setAttribute('cy',l.getAttribute('y1'));c.style.fill='var(--accent2)';
+  ['x','y'].forEach(a=>{const an=document.createElementNS(ns,'animate');an.setAttribute('attributeName','c'+a);an.setAttribute('from',l.getAttribute(a+'1'));
+   an.setAttribute('to',l.getAttribute(a+'2'));an.setAttribute('dur','1.6s');an.setAttribute('begin',((k%4)*.35)+'s');an.setAttribute('repeatCount','indefinite');c.appendChild(an)});
+  l.parentNode.appendChild(c)});
+ // neural network canvas
+ const cv=document.getElementById('net');if(!cv||RM)return;
+ const hero=document.querySelector('.hero'),cx=cv.getContext('2d');let W,H,pts=[],m={x:-999,y:-999},run=true,on=false,fr=0,col='124,140,255';
+ function rgb(h){h=h.trim().replace('#','');if(h.length===3)h=h.split('').map(x=>x+x).join('');return [0,2,4].map(i=>parseInt(h.substr(i,2),16)).join(',')}
+ function size(){const d=devicePixelRatio||1;W=hero.clientWidth;H=hero.clientHeight;cv.width=W*d;cv.height=H*d;cx.setTransform(d,0,0,d,0,0);
+  pts=Array.from({length:Math.min(Math.round(W*H/15000),75)},()=>({x:Math.random()*W,y:Math.random()*H,vx:(Math.random()-.5)*.35,vy:(Math.random()-.5)*.35}))}
+ size();addEventListener('resize',size);
+ hero.addEventListener('mousemove',e=>{const b=hero.getBoundingClientRect();m.x=e.clientX-b.left;m.y=e.clientY-b.top});
+ hero.addEventListener('mouseleave',()=>{m.x=m.y=-999});
+ function draw(){if(!run){on=false;return}
+  if(fr++%90===0)col=rgb(getComputedStyle(document.documentElement).getPropertyValue('--accent'));
+  cx.clearRect(0,0,W,H);
+  for(let i=0;i<pts.length;i++){const a=pts[i];a.x+=a.vx;a.y+=a.vy;if(a.x<0||a.x>W)a.vx*=-1;if(a.y<0||a.y>H)a.vy*=-1;
+   const dm=Math.hypot(a.x-m.x,a.y-m.y);if(dm<190){a.x+=(m.x-a.x)*.004;a.y+=(m.y-a.y)*.004;cx.strokeStyle=`rgba(${col},${(1-dm/190)*.6})`;cx.beginPath();cx.moveTo(a.x,a.y);cx.lineTo(m.x,m.y);cx.stroke()}
+   cx.fillStyle=`rgba(${col},.8)`;cx.beginPath();cx.arc(a.x,a.y,1.8,0,6.283);cx.fill();
+   for(let j=i+1;j<pts.length;j++){const b=pts[j],d=Math.hypot(a.x-b.x,a.y-b.y);if(d<130){cx.strokeStyle=`rgba(${col},${(1-d/130)*.35})`;cx.beginPath();cx.moveTo(a.x,a.y);cx.lineTo(b.x,b.y);cx.stroke()}}}
+  requestAnimationFrame(draw)}
+ new IntersectionObserver(es=>{run=es[0].isIntersecting;if(run&&!on){on=true;draw()}}).observe(hero);
+})();
 </script>
 </body>
 </html>
