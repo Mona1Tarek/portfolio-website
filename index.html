@@ -120,10 +120,6 @@ footer h2::after{left:50%;transform:translateX(-50%)}
 
 #net{position:absolute;inset:0;width:100%;height:100%;opacity:.6;pointer-events:none}
 .hero .wrap{z-index:1}
-.ch{display:inline-block;white-space:pre;opacity:0;transform:translateY(46px) rotate(8deg);animation:chIn .9s var(--ease) forwards;animation-delay:calc(var(--c)*50ms + .3s)}
-@keyframes chIn{to{opacity:1;transform:none}}
-.hero h1 em{display:inline-block}
-.hero h1 em.in-up{animation:up .9s var(--ease) forwards,shine 5s linear infinite}
 .rot b{font-weight:500;color:var(--text)}
 .cue{position:absolute;left:50%;bottom:18px;width:24px;height:38px;margin-left:-12px;border:2px solid var(--muted);border-radius:14px;opacity:.7}
 .cue span{position:absolute;left:50%;top:7px;width:4px;height:8px;margin-left:-2px;border-radius:2px;background:var(--accent2);animation:wheel 1.8s var(--ease) infinite}
@@ -152,6 +148,10 @@ footer h2::after{left:50%;transform:translateX(-50%)}
 @keyframes ring{0%{box-shadow:0 0 0 0 color-mix(in srgb,var(--accent) 50%,transparent)}70%,100%{box-shadow:0 0 0 14px transparent}}
 .ripple{position:absolute;border-radius:50%;background:rgba(255,255,255,.45);transform:scale(0);animation:rip .7s ease-out forwards;pointer-events:none}
 @keyframes rip{to{transform:scale(4);opacity:0}}
+.ch{display:inline-block;white-space:pre;opacity:0;transform:translateY(46px) rotate(8deg);animation:chIn .9s var(--ease) forwards;animation-delay:calc(var(--c)*50ms + .3s)}
+@keyframes chIn{to{opacity:1;transform:none}}
+.hero h1 em{display:inline-block}
+.hero h1 em.in-up{animation:up .9s var(--ease) forwards,shine 5s linear infinite}
 @media(prefers-reduced-motion:reduce){.ch{opacity:1!important;transform:none!important}}
 </style>
 </head>
@@ -188,10 +188,10 @@ footer h2::after{left:50%;transform:translateX(-50%)}
 <section id="expertise"><div class="wrap reveal">
 <h2>Expertise</h2>
 <div class="stagger">
-<div class="exp-row"><h3>Machine Learning &amp; Deep Learning</h3><p>Core skills in machine learning and deep learning frameworks and techniques.</p><div class="sk"><span><i>🧠</i>TensorFlow</span><span><i>🔥</i>PyTorch</span><span><i>🧩</i>Keras</span><span><i>📊</i>Scikit-learn</span><span><i>🕸️</i>Neural Networks</span><span><i>📈</i>Model Optimization</span><span><i>🎛️</i>Hyperparameter Tuning</span><span><i>🔁</i>Transfer Learning</span><span><i>✅</i>Model Evaluation</span></div></div>
-<div class="exp-row"><h3>Generative AI &amp; LLMs</h3><p>Expertise in generative AI technologies and large language models.</p><div class="sk"><span><i>🔎</i>RAG</span><span><i>🤖</i>Agents</span><span><i>🔗</i>LangChain</span><span><i>🛠️</i>LangSmith</span><span><i>✍️</i>Prompt Engineering</span><span><i>⚡</i>Transformers</span><span><i>🧬</i>AI Pipeline Development</span></div></div>
-<div class="exp-row"><h3>Data Storage &amp; Retrieval</h3><p>Working with data processing libraries, databases and vector search.</p><div class="sk"><span><i>🐼</i>Pandas</span><span><i>🔢</i>NumPy</span><span><i>🍃</i>MongoDB</span><span><i>🎨</i>ChromaDB</span><span><i>🧭</i>Qdrant</span><span><i>📐</i>Embeddings</span><span><i>🎯</i>Vector Retrieval</span></div></div>
-<div class="exp-row"><h3>Engineering &amp; Deployment</h3><p>Building, shipping and running AI services.</p><div class="sk"><span><i>🐍</i>Python</span><span><i>🧱</i>OOP</span><span><i>🌿</i>Git</span><span><i>🐧</i>Linux</span><span><i>🚀</i>FastAPI</span><span><i>🔌</i>API development</span><span><i>🐳</i>Docker</span><span><i>🎈</i>Streamlit</span></div></div>
+<div class="exp-row"><h3>Machine Learning &amp; Deep Learning</h3><p>Core skills in machine learning and deep learning frameworks and techniques.</p><div class="sk"><span><i>🔶</i>TensorFlow</span><span><i>🔥</i>PyTorch</span><span><i>🧱</i>Keras</span><span><i>📊</i>Scikit-learn</span><span><i>🧠</i>Neural Networks</span><span><i>⚙️</i>Model Optimization</span><span><i>🎛️</i>Hyperparameter Tuning</span><span><i>🔄</i>Transfer Learning</span><span><i>✅</i>Model Evaluation</span></div></div>
+<div class="exp-row"><h3>Generative AI &amp; LLMs</h3><p>Expertise in generative AI technologies and large language models.</p><div class="sk"><span><i>📚</i>RAG</span><span><i>🤖</i>Agents</span><span><i>🔗</i>LangChain</span><span><i>🔍</i>LangSmith</span><span><i>💬</i>Prompt Engineering</span><span><i>🤗</i>Transformers</span><span><i>🏗️</i>AI Pipeline Development</span></div></div>
+<div class="exp-row"><h3>Data Storage &amp; Retrieval</h3><p>Working with data processing libraries, databases and vector search.</p><div class="sk"><span><i>🐼</i>Pandas</span><span><i>🔢</i>NumPy</span><span><i>🍃</i>MongoDB</span><span><i>🎨</i>ChromaDB</span><span><i>🗃️</i>Qdrant</span><span><i>🧬</i>Embeddings</span><span><i>🎯</i>Vector Retrieval</span></div></div>
+<div class="exp-row"><h3>Engineering &amp; Deployment</h3><p>Building, shipping and running AI services.</p><div class="sk"><span><i>🐍</i>Python</span><span><i>🧩</i>OOP</span><span><i>🌿</i>Git</span><span><i>🐧</i>Linux</span><span><i>⚡</i>FastAPI</span><span><i>🔌</i>API development</span><span><i>🐳</i>Docker</span><span><i>🎈</i>Streamlit</span></div></div>
 </div>
 </div></section>
 
@@ -311,9 +311,9 @@ if(matchMedia('(hover:hover)').matches)document.querySelectorAll('.btn').forEach
 (function(){
  const RM=matchMedia('(prefers-reduced-motion:reduce)').matches;
  // letter-by-letter name
- const h=document.getElementById('name'),tn=h.firstChild,f=document.createDocumentFragment();
- [...tn.textContent].forEach((c,k)=>{const sp=document.createElement('span');sp.className='ch';sp.style.setProperty('--c',k);sp.textContent=c;f.appendChild(sp)});
- h.replaceChild(f,tn);
+ const nm=document.getElementById('name'),tn=nm.firstChild,fg=document.createDocumentFragment();
+ [...tn.textContent].forEach((c,k)=>{const sp=document.createElement('span');sp.className='ch';sp.style.setProperty('--c',k);sp.textContent=c;fg.appendChild(sp)});
+ nm.replaceChild(fg,tn);
  // rotating roles
  const el=document.getElementById('rot'),ph=['end-to-end LLM systems','RAG pipelines','agentic workflows','production-ready AI services'];
  if(RM){el.textContent=ph[0]}else{let p=0,c=0,d=false;(function tick(){const w=ph[p];el.textContent=w.slice(0,c);
